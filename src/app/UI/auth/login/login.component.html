@@ -1,0 +1,56 @@
+<div class="">
+  {{loginForm.value | json}}
+  <form class="form-horizontal needs-validation" novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class=" justify-content-center" style=" display:flex">
+      <div class="col-lg-5">
+        <div class="card shadow-lg border-0 rounded-lg mt-5 mb-4">
+          <div class="card-header">
+            <h3 class="text-center font-weight-light my-4">Login</h3>
+          </div>
+
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="small mb-1" for="UserName">UserName or Email</label>
+              <input class="form-control py-4 " [class.is-invalid]="validate('userNameOrEmail')" formControlName="userNameOrEmail" placeholder="UserName or Email">
+              <div class="invalid-feedback">
+                Please write your username or Email
+              </div>
+              <!-- <mat-form-field appearance="fill">
+                  <mat-label>Email or Username</mat-label>
+                  <input matInput placeholder="Placeholder">
+                  <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field> -->
+            </div>
+
+            <div class="form-group ">
+              <label class="small mb-1" for="Password">Password</label>
+              <input class="form-control py-4" [class.is-invalid]="validate('password')" formControlName="password" placeholder="Password" type="password">
+              <div class="invalid-feedback">
+                Please write Password
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="RememberMe" formControlName="rememberMe" type="checkbox">
+                <label class="custom-control-label" for="RememberMe">Remember me ?</label>
+              </div>
+            </div>
+
+
+            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+              <a class="small" routerLink="/resetpassword">Forgot Password ?</a>
+              <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+
+          </div>
+
+          <div class="card-footer text-center">
+            <div class="small"><a routerLink="/register">Register new account ..</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
